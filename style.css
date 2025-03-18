@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column; /* Permite que el contenido y el pie de página se alineen */
+}
+/* Estilos para la navegación transparente */
+header {
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+    transition: background 0.4s ease-in-out, padding 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Cuando se hace scroll, cambiará a un color sólido */
+header.scrolled {
+    background: rgba(0, 0, 0, 0.9); /* Fondo sólido */
+    padding: 10px 0;
+}
+
+/* Estilos del logo */
+.logo h1 {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Animación del logo al hacer scroll */
+header.scrolled .logo h1 {
+    transform: scale(0.9);
+    opacity: 0.9;
+}
+
+/* Estilos de la navegación */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+nav ul li {
+    margin: 0 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Cambia la opacidad de los enlaces al hacer scroll */
+header.scrolled nav ul li {
+    opacity: 0.8;
+}
+
+/* Enlaces de la navegación */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Efecto hover en los enlaces */
+nav ul li a:hover {
+    color: #f39c12; /* Un color resaltado */
+}
+
+/* Animación para la barra inferior en hover */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #f39c12;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+
+.content-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+
+}
+.hero-fondo{
+    background-color: #222a;
+}
+#hero {
+    background: url('im2.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+}
+
+#hero h2 {
+    font-size: 2.5em;
+}
+
+#historia{
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 800px; /* Limita el ancho del texto para mejorar la legibilidad */
+    margin-left: auto;
+    margin-right: auto;
+    color: #555; 
+    flex-wrap: wrap;
+}
+#about, #services, #projects, #historia {
+    text-align: center;
+    margin: auto; 
+    padding: 70vh 0;
+    width:70%;
+}
+
+h2, h1, h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.service {
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+    margin-bottom: 10px;
+}
+
+#projects ul {
+    list-style-type: none;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#contact form input, #contact form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#contact form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#contact form button:hover {
+    background-color: #555;
+}
+
+/* Estilos generales para la sección "Nosotros" */
+#about {
+    background-color: #f4f4f4; /* Color de fondo suave */
+    padding: 50px;
+    text-align: center;
+    color: #333; /* Texto en un color oscuro para facilitar la lectura */
+    font-family: Arial, sans-serif;
+}
+
+/* Título de la sección "Nosotros" */
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2a2a2a;
+    text-transform: uppercase; /* Estilo de texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre las letras */
+}
+
+/* Estilo para los párrafos dentro de la sección */
+#about p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 800px; /* Limita el ancho del texto para mejorar la legibilidad */
+    margin-left: auto;
+    margin-right: auto;
+    color: #555; /* Color de texto suave */
+}
+
+/* Estilo para la lista de "¿Por qué elegirnos?" */
+#about ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Elementos de la lista */
+#about ul li {
+    list-style-type: none;
+    font-size: 1.1em;
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+
+/* Resaltar el texto en negrita */
+#about strong {
+    color: #f39c12; /* Color dorado para resaltar */
+    font-weight: bold;
+}
+
+/* Estilos adicionales para secciones */
+#about p:last-of-type {
+    margin-bottom: 0;
+}
+
+.content-projects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-bottom: 100px;
+}
+
+/* Contenedor de la galería */
+.gallery-container {
+    margin: auto;
+    position: relative;
+    width: 700px;
+    height: 500px;
+    overflow: hidden; /* Oculta las imágenes fuera de la vista */
+}
+
+/* Contenedor de imágenes */
+.gallery {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos de las imágenes */
+.gallery img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(100%);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Imagen activa */
+.gallery img.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateX(0);
+}
+
+/* Imagen saliente */
+.gallery img.outgoing {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(-100%);
+}
+
+/* Hover para pausar la animación */
+.gallery-container:hover .gallery img {
+    animation-play-state: paused;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .gallery img {
+        border-radius: 10px;
+    }
+}
+
+/* Diseño para pantallas pequeñas */
+@media (max-width: 768px) {
+    #about {
+        padding: 20px;
+    }
+
+    #about h2 {
+        font-size: 2em;
+    }
+
+    #about p, #about ul {
+        font-size: 1em;
+    }
+
+    .gallery-container {
+        margin: auto;
+        position: relative;
+        width: 400px;
+        height: 300px;
+        overflow: hidden; /* Oculta las imágenes fuera de la vista */
+    }
+}
+
+#contact{
+    text-align: center;
+    margin-bottom: 50px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Hace que el pie de página se empuje al fondo */
+    width: 100%;
+}
+
